@@ -116,7 +116,7 @@ also, write it using ternary operator.
  */
 
 let num1 = 15;
-let num2 = 10;
+let num2 = 30;
 
 let result;
 if (num1 > num2) {
@@ -125,3 +125,36 @@ if (num1 > num2) {
   result = num1 + num2;
 }
 console.log(result);
+
+// using ternary
+result = num1 > num2 ? num1 * 2 : num1 + num2;
+console.log("Using ternary", result);
+
+/***
+
+Ticket fare Calculator
+    - Children (age < 10): free
+    - Students get a 50% discount
+    - Senior citizens (age >= 60) gets a 15% Discount
+    - Otherwise Regular ticket fare 800 tk
+*/
+
+let age = 10;
+let fare = 800;
+let isStudent = false;
+
+// fare = age <= 10 ?
+// "free" :age > 10 && age < 60 ?
+// fare * 0.5 : fare * 0.15 : fare
+
+if (age <= 10) {
+  fare = "free";
+} else if (isStudent) {
+  fare = fare * 0.5;
+} else if (age >= 60) {
+  fare = fare * 0.15;
+} else {
+  fare;
+}
+
+console.log(fare);
