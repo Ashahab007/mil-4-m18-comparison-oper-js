@@ -131,7 +131,6 @@ result = num1 > num2 ? num1 * 2 : num1 + num2;
 console.log("Using ternary", result);
 
 /***
-
 Ticket fare Calculator
     - Children (age < 10): free
     - Students get a 50% discount
@@ -139,20 +138,18 @@ Ticket fare Calculator
     - Otherwise Regular ticket fare 800 tk
 */
 
-let age = 10;
+let age = 70;
 let fare = 800;
 let isStudent = false;
 
-// fare = age <= 10 ?
-// "free" :age > 10 && age < 60 ?
-// fare * 0.5 : fare * 0.15 : fare
-
-if (age <= 10) {
+if (age <= 10 && (isStudent || !isStudent)) {
   fare = "free";
 } else if (isStudent) {
-  fare = fare * 0.5;
-} else if (age >= 60) {
-  fare = fare * 0.15;
+  let discount = fare * 0.5;
+  fare = fare - discount;
+} else if (age >= 60 && !isStudent) {
+  let discount = fare * 0.15;
+  fare = fare - discount;
 } else {
   fare;
 }
